@@ -1,0 +1,19 @@
+# config.yml
+
+
+generators:
+  - type: vertical_lines_banding
+    output_dir: C:\Users\ianko\Desktop\Projects\AbacusBooks\AbacusApplications\SyntheticDataGenerator\result
+    image:
+      width: 400
+      height: 400
+    num_images: 1
+
+#  - type: horizontal_lines_banding
+#    sine_wave:
+#      amplitude: 20
+#      frequency: 0.05
+#    output_file: horizontal_lines_image.png
+#    image:
+#      width: 400
+#      height: 400
