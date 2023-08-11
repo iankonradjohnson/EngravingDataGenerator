@@ -1,7 +1,7 @@
 import yaml
 import sys
 
-from synthetic_data_generator_factory import SyntheticDataGeneratorFactory
+from factory.synthetic_data_generator_factory import SyntheticDataGeneratorFactory
 
 
 def main():

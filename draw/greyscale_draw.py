@@ -8,20 +8,15 @@ class GreyscaleDraw:
     def line(self, sequence, fill, width):
         start, end = sequence
 
-        int_width = int(width)
-        frac_width = width - int_width
+        # Gradient steps, modify to adjust gradient smoothness
+        steps = 5
+        step_width = width / steps
 
-        base_color = int(255 * (1 - frac_width))
-        alpha_color = int(255 * frac_width)
-
-        # Draw the thicker part of the line
-        draw = ImageDraw.Draw(self.im)
-        draw.line((start, end), fill=(fill[0], fill[1], fill[2], base_color), width=int_width)
-
-        # Draw the overlay line, representing the fractional part of the width
-        if frac_width > 0:
+        for i in range(1, steps):
+            alpha = int(255 * i / steps)  # Decrease alpha for outer layers
             overlay = Image.new("RGBA", self.im.size, (0, 0, 0, 0))
             overlay_draw = ImageDraw.Draw(overlay)
 
-            overlay_draw.line((start, end), fill=(fill[0], fill[1], fill[2], alpha_color), width=int_width + 1)
+            current_width = (steps - i) * step_width
+            overlay_draw.line((start, end), fill=(fill[0], fill[1], fill[2], alpha), width=int(current_width))
             self.im.paste(Image.alpha_composite(self.im, overlay))
