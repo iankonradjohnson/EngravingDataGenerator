@@ -2,8 +2,8 @@
 
 
 generators:
-  - type: vertical_lines_banding
-    output_dir: C:\Users\ianko\Desktop\Projects\AbacusBooks\AbacusApplications\SyntheticDataGenerator\result
+  - type: line_banding
+    output_dir: C:\Users\ianko\Desktop\Projects\AbacusBooks\AbacusApplications\EngravingDataGenerator\result
     image:
       width: 400
       height: 400

@@ -1,6 +1,5 @@
-from generators.horizontal_lines_banding_generator import HorizontalLinesBandingGenerator
 from generators.random_banding_generator import RandomBandingGenerator
-from generators.vertical_lines_banding_generator import VerticalLinesBandingGenerator
+from generators.line_banding_generator import LineBandingGenerator
 
 
 class SyntheticDataGeneratorFactory:
@@ -11,10 +10,8 @@ class SyntheticDataGeneratorFactory:
         for generator_config in config_data.get("generators", []):
 
             generator_type = generator_config.get("type")
-            if generator_type == "vertical_lines_banding":
-                generators.append(VerticalLinesBandingGenerator(generator_config))
-            elif generator_type == "horizontal_lines_banding":
-                generators.append(HorizontalLinesBandingGenerator(generator_config))
+            if generator_type == "line_banding":
+                generators.append(LineBandingGenerator(generator_config))
             elif generator_type == "random_banding":
                 generators.append(RandomBandingGenerator(generator_config))
 
