@@ -1,4 +1,4 @@
-from generators.synthetic_data_generator import SyntheticDataGenerator
+from src.generators.synthetic_data_generator import SyntheticDataGenerator
 
 
 class RandomBandingGenerator(SyntheticDataGenerator):

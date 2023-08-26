@@ -1,3 +1,5 @@
+import math
+
 from PIL import ImageDraw, Image
 
 
@@ -13,7 +15,7 @@ class GreyscaleDraw:
         step_width = width / steps
 
         for i in range(1, steps):
-            alpha = int(255 * i / steps)  # Decrease alpha for outer layers
+            alpha = int(255 * (math.log(i + 1) / math.log(steps)))
             overlay = Image.new("RGBA", self.im.size, (0, 0, 0, 0))
             overlay_draw = ImageDraw.Draw(overlay)
 

@@ -1,5 +1,5 @@
-from generators.random_banding_generator import RandomBandingGenerator
-from generators.line_banding_generator import LineBandingGenerator
+from src.generators.random_banding_generator import RandomBandingGenerator
+from src.generators.line_banding_generator import LineBandingGenerator
 
 
 class SyntheticDataGeneratorFactory:
