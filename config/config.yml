@@ -3,11 +3,26 @@
 
 generators:
   - type: line_banding
-    output_dir: C:\Users\ianko\Desktop\Projects\AbacusBooks\AbacusApplications\EngravingDataGenerator\result
+    lr_output_dir: C:\Users\ianko\Desktop\Projects\AbacusBooks\AbacusApplications\EngravingDataGenerator\result\data\lr
+    gt_output_dir: C:\Users\ianko\Desktop\Projects\AbacusBooks\AbacusApplications\EngravingDataGenerator\result\data\gt
     image:
       width: 400
       height: 400
-    num_images: 1
+    num_images: 10000
+    line_frequency_range: [15, 50]
+    amplitude_range: [2, 4]
+    frequency_range: [1, 1]
+    angle_range: [0, 1]
+    processors: [
+      'random_orientation',
+      'random_brightness',
+      'random_contrast',
+      'random_noise'
+    ]
+    brightness_range: [0.8, 1.2]
+    contrast_range: [0.5, 1.5]
+    intensity_range: [4, 10]
+    max_noise_intensity: 0.3
 
 #  - type: horizontal_lines_banding
 #    sine_wave:
